@@ -1,6 +1,6 @@
 #
-# Copyright 2016 The CyanogenMod Project
-# Copyright 2017 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# This contains the module build definitions for the hardware-specific
+# components for this device.
+#
+# As much as possible, those components should be built unconditionally,
+# with device-specific names to avoid collisions, to avoid device-specific
+# bitrot and build breakages. Building a component unconditionally does
+# *not* include it on all devices, so it is safe even with hardware-specific
+# components.
 
 $(call inherit-product, device/xiaomi/kenzo/full_kenzo.mk)
 
@@ -36,6 +45,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Use the latest approved GMS identifiers unless running a signed build
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="kenzo-user 6.0.1 MMB29M V8.2.1.0.MHOCNDL release-keys"
+    PRIVATE_BUILD_DESC="kenzo-user 6.0.1 MMB29M V9.5.3.0.MHOMIFA release-keys"
 
-BUILD_FINGERPRINT=Xiaomi/kenzo/kenzo:6.0.1/MMB29M/V8.2.1.0.MHOCNDL:user/release-keys
+BUILD_FINGERPRINT := "Xiaomi/kenzo/kenzo:6.0.1/MMB29M/V9.5.3.0.MHOMIFA:user/release-keys"
